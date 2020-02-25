@@ -42,7 +42,8 @@ Remove the first column fo this file.
 SNPdata2 <- SNPdata[,-1]
 ```
 
-Your dataset, here called SNPdata, should be a matrix with columns = loci, and rows = inds.
+Your dataset, here called SNPdata, should be a matrix with columns = loci, and rows = inds. 
+We have to transpose the genotype matrix (SNPdata) to get it into OutFLANK format.
 ```{r}
 SNPdata <- t(SNPdata)
 head(SNPdata)
@@ -63,7 +64,7 @@ locusname <- as.character(read.table("70indsbg.012.pos", header=FALSE)
 locusname
 ```
 
-Calculate Fst per locus.
+First, we calculate FST on all the loci in our dataset.
 ```{r}
 FstDataFrame <- MakeDiploidFSTMat(SNPdata2,locusname,inds)
 head(FstDataFrame)
