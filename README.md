@@ -1,9 +1,16 @@
 # OUTFLANK
 
-OUTFLANK is a nice software to detect outliers.
+OUTFLANK is an R package that implements the method developed by Whitlock and Lotterhos (2015) to use likelihood on a trimmed distribution of FST values to infer the distribution of FST for neutral markers. See the [vignette](https://htmlpreview.github.io/?https://github.com/whitlock/OutFLANK/blob/master/inst/doc/OutFLANKAnalysis.html) for further explanations and escription of the package utilities.
 
 ## 1. Prepare your dataset
-To use OUTFLANK, you can convert your vcf file to 012 file using vcftools. 
+
+To be able to analyse your file with OUTFLANK, use the option **-012** [VCFTOOLS](http://vcftools.sourceforge.net) in the terminal. 
+
+This option outputs three files:
+1- a large matrix with suffix ".012", which contains the genotypes of each individual on a separate line. Genotypes are represented as 0, 1 and 2, where the number represent that number of non-reference alleles. Missing genotypes are represented by -1. 
+2 - a file with suffix ".012.indv" details the individuals included in the main file. 
+3 - a file, with suffix ".012.pos" details the site locations included in the main file.
+
 ```{r, engine = 'bash', eval = FALSE}
 vcftools --vcf yourvcffile.vcf --012
 ```
@@ -25,7 +32,7 @@ library(OutFLANK)
 ```
 
 ## 3. Import your dataset for OUTFLANK analysis
-Import your 012 file to R workspace.
+Import your .012 file to R workspace.
 ```{r}
 SNPdata <- read.table("70indsbg.012", header=FALSE)
 ```
@@ -52,7 +59,7 @@ dim(inds)
 
 Add locus names.
 ```{r}
-locusname <- as.character(1:2442)
+locusname <- as.character(read.table("70indsbg.012.pos", header=FALSE)
 locusname
 ```
 
