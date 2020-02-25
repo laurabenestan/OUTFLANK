@@ -64,7 +64,7 @@ locusname <- as.character(read.table("70indsbg.012.pos", header=FALSE)
 locusname
 ```
 
-First, we calculate FST on all the loci in our dataset.
+First, we calculate FST on all the loci in our dataset. Calculating FSTs, may take a few minutes...
 ```{r}
 FstDataFrame <- MakeDiploidFSTMat(SNPdata2,locusname,inds)
 head(FstDataFrame)
