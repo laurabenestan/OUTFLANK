@@ -21,8 +21,9 @@ In R download devtools and qvalue libraries required for OUTFLANK.
 ```{r}
 install.packages("devtools")
 library(devtools)
-source("http://bioconductor.org/biocLite.R")
-biocLite("qvalue")
+if (!require("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+BiocManager::install("qvalue")
 ```
 Then, install OUTFLANK from Github and load the librairy.
 
