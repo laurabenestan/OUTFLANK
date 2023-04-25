@@ -19,8 +19,6 @@ vcftools --vcf yourvcffile.vcf --012
 
 In R download devtools and qvalue libraries required for OUTFLANK.
 ```{r}
-install.packages("devtools")
-library(devtools)
 if (!require("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 BiocManager::install("qvalue")
@@ -28,6 +26,8 @@ BiocManager::install("qvalue")
 Then, install OUTFLANK from Github and load the librairy.
 
 ```{r}
+install.packages("devtools")
+library(devtools)
 install_github("whitlock/OutFLANK")
 library(OutFLANK)
 ```
