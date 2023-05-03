@@ -32,7 +32,7 @@ install_github("whitlock/OutFLANK")
 library(OutFLANK)
 ```
 
-## 3. Import your dataset for OUTFLANK analysis
+## 3. Import your dataset for OUTFLANK analysis in R
 Import your .012 file to R workspace.
 ```{r}
 SNPdata <- read.table("70indsbg.012", header=FALSE)
