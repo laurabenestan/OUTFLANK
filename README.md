@@ -2,7 +2,7 @@
 
 OUTFLANK is an R package that implements the method developed by Whitlock and Lotterhos (2015) to use likelihood on a trimmed distribution of FST values to infer the distribution of FST for neutral markers. See the [vignette](https://htmlpreview.github.io/?https://github.com/whitlock/OutFLANK/blob/master/inst/doc/OutFLANKAnalysis.html) for further explanations and escription of the package utilities.
 
-## 1. Prepare your dataset in the right format
+## 1. Prepare your matrix of genotype (dataset) in the right format
 
 To be able to analyse your file with OUTFLANK, use the option **-012** [VCFTOOLS](http://vcftools.sourceforge.net) in the terminal. 
 
